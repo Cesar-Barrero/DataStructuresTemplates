@@ -40,7 +40,8 @@ public class Stack {
 	 */
 	public void push(Node newNode)
 	{
-		
+		newNode.setNext(top);
+		top = newNode;
 	}
 	
 	
@@ -50,7 +51,11 @@ public class Stack {
 	 */
 	public Node pop()
 	{
-		return null;
+		Node temp = top;
+		top = temp.getNext();
+		temp = null;
+		
+		return temp;
 	}
 	
 	

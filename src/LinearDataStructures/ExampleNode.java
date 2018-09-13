@@ -18,7 +18,10 @@ package LinearDataStructures;
  */
 public class ExampleNode implements Node {
 
+	//Data structure 
 	public int value;
+	
+	//
 	public ExampleNode next = null;
 	
 	

@@ -72,7 +72,12 @@ public class List {
 	 */
 	public void insertAtEnd(Node newNode)
 	{
+		Node temp = head;
 		
+		while (temp.getNext() != null) 
+			temp = temp.getNext();
+		
+		temp.setNext(newNode);
 	}
 	
 	
@@ -83,7 +88,13 @@ public class List {
 	 */
 	public void insertAtIndex(Node newNode, int index)
 	{
+		Node temp = head;
 		
+		for (int i = 0; i < index - 1; i++)
+			temp = temp.getNext();
+		
+		newNode.setNext(temp.getNext());
+		temp.setNext(newNode);
 	}
 	
 	
@@ -104,6 +115,21 @@ public class List {
 	 */
 	public void deleteAtEnd()
 	{
+		if (!isEmpty()) 
+		{
+			Node temp = head;
+			Node previous = head;
+			
+			while (temp.getNext() != null) 
+			{
+				previous = temp;
+				temp = temp.getNext();
+			}
+			
+			previous.setNext(null);
+			temp = null;
+			System.gc();
+		}
 	}
 	
 	
@@ -217,9 +243,7 @@ public class List {
 		while(temp != null)
 		{
 			if(temp.isEqual(node))
-			{	
 				results.insertAtEnd(temp.clone());
-			}
 			
 			temp = temp.getNext();
 		}
@@ -233,9 +257,28 @@ public class List {
 	 * @param node
 	 * @return
 	 */
-	public Node binarySearch(Node node)
+	public int binarySearch(Node node)
 	{
-		return null;
+		head = quickSort(this).head;
+		int middle, upper = this.length() - 1, lower = 0;
+		
+		while (lower < upper) 
+		{
+			middle = (upper + lower) / 2;
+			
+			if (this.get(middle).isEqual(node))
+				return middle;
+			else 
+				if (this.get(middle).isLessThan(node)) 
+					lower = middle;
+				else 
+					upper = middle;
+		}
+		
+		if (lower == upper && this.get(lower).isEqual(node)) 
+			return lower;
+		
+		return -1;
 	}
 	
 	
@@ -264,7 +307,7 @@ public class List {
 	 */
 	public List quickSort(List unsorted)
 	{
-		if(unsorted.length() <= 1)
+		if(unsorted.length() < 1)
 		{
 			return unsorted;	
 		}
@@ -328,6 +371,22 @@ public class List {
 	{
 		List subList = new List();
 		
+		if (begin < this.length() && end < this.length()) 
+		{
+			Node temp = head;
+			int i;
+			
+			for (i = 0; i < begin; i++) 
+				temp = temp.getNext();
+			
+			while (temp != null && i < end) 
+			{
+				subList.insertAtEnd(temp.clone());
+				temp = temp.getNext();
+				i += 1;
+			}
+		}
+		
 		return subList;
 	}
 	
@@ -338,7 +397,16 @@ public class List {
 	 */
 	public int length()
 	{
-		return -1;
+		Node temp = head;
+		int counter = 0;
+		
+		while (temp != null) 
+		{
+			counter += 1;
+			temp = temp.getNext();
+		}
+		
+		return counter;
 	}
 	
 	
@@ -348,7 +416,17 @@ public class List {
 	 */
 	public List cloneList()
 	{
-		return null;
+		List clone = new List();
+		
+		Node temp = head;
+		
+		while (temp != null) 
+		{
+			clone.insertAtEnd(temp.clone());
+			temp = temp.getNext();
+		}
+		
+		return clone;
 	}
 	
 	
@@ -386,6 +464,16 @@ public class List {
 	 */
 	public Node get(int index)
 	{
+		Node response = null;
+		
+		if (index < this.length())
+		{
+			response = head;
+			
+			for (int i = 0; i < index; i++) 
+				response = response.getNext();
+		}
+		
 		return null;
 	}
 	
@@ -411,5 +499,26 @@ public class List {
 		 
 		index = -1;
 		return index;
+	}
+	
+	public static void main(String [] args)
+	{
+		List test = new List();
+		
+		test.insertAtBegin(new ExampleNode(15));
+		test.insertAtBegin(new ExampleNode(10));
+		test.insertAtBegin(new ExampleNode(9));
+		test.insertAtEnd(new ExampleNode(4));
+		test.insertAtEnd(new ExampleNode(5));
+		test.insertAtIndex(new ExampleNode(15),3);
+		
+		test = test.quickSort(test);
+		test.printList();
+		
+		test.deleteAtBegin();
+		test.deleteAtEnd();
+		test.deleteAtIndex(2);
+		
+		test.printList();
 	}
 }
