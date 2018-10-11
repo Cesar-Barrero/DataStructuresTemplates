@@ -28,7 +28,10 @@ public class Recurrences {
 	 */
 	public int mcd_euclides(int a, int b)
 	{
-		return 0;
+		if (b == 0) 
+			return a;
+		else
+			return mcd_euclides(b, a % b);
 	}
 	
 	
@@ -53,7 +56,13 @@ public class Recurrences {
 	 */
 	public int fibonacci(int x)
 	{
-		return 0;
+		if (x == 0) 
+			return 0;
+		else
+			if(x == 1)
+				return 1;
+			else
+				return fibonacci(x - 1) + fibonacci(x - 2);
 	}
 	
 	
@@ -66,7 +75,10 @@ public class Recurrences {
 	 */
 	public int pascal(int n, int k)
 	{
-		return 0;
+		if (k == 0 || k == n)
+			return 1;
+		else 
+			return pascal(n - 1, k - 1) + pascal(n - 1, k);
 	}
 	
 	
@@ -98,7 +110,10 @@ public class Recurrences {
 	 */
 	public int multiplicacion(int n, int x)
 	{
-		return 0;
+		if (x == 1) 
+			return n;
+		else 
+			return n + multiplicacion(n, x - 1); 
 	}
 	
 	

@@ -37,10 +37,9 @@ public class GenerateSequences {
 	 * 
 	 * @return
 	 */
-	public static String nucleotide()
+	public static String nucleotide(int random)
 	{
-		Random rd = new Random();
-		switch(rd.nextInt(4))
+		switch(random)
 		{
 			case 0: 	return "A";	
 			case 1:		return "C";	
@@ -58,7 +57,12 @@ public class GenerateSequences {
 	 */
 	public static String sequence(int length)
 	{
-		return "";
+		Random rd = new Random();
+		
+		if (length == 1) 
+			return nucleotide(rd.nextInt(4)); 
+		else
+			return nucleotide(rd.nextInt(4)) + sequence(length - 1);
 	}
 	
 	

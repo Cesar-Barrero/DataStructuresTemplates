@@ -63,9 +63,9 @@ public class Stack {
 	 * 
 	 * @return
 	 */
-	public String peek()
+	public Node peek()
 	{
-		return null;
+		return top;
 	}
 	
 	
