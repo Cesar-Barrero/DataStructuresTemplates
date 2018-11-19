@@ -1,7 +1,8 @@
 package LinearDS_Problems;
-import java.io.*;
 
+import java.io.*;
 import LinearDataStructures.*;
+
 //https://www.urionlinejudge.com.br/judge/en/problems/view/1281
 
 public class GoingToTheMarket {
@@ -15,7 +16,7 @@ public class GoingToTheMarket {
 		public nodeProblem(String product, double price) 
 		{
 			this.product = product;
-			
+			this.price = price;
 		}
 
 		@Override
@@ -71,7 +72,7 @@ public class GoingToTheMarket {
 				for (int j = 0; j < amount; j++) 
 				{
 					String [] product = br.readLine().split(" ");
-					products.insertAtEnd(new nodeProblem(product, price));
+					//products.insertAtEnd(new nodeProblem(product, price));
 				}
 				
 				shop = Integer.parseInt(br.readLine());

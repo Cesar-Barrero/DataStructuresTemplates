@@ -66,9 +66,7 @@ public class Main {
 				bw.write("El estudiante con el ID " + id + " ha sido exitosamente eliminado.\n");
 			}
 			else
-			{
 				bw.write("El ID ingresado no existe.\n");
-			}
 			
 			bw.flush();
 		}

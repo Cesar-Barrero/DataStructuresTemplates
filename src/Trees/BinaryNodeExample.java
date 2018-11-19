@@ -59,19 +59,27 @@ public class BinaryNodeExample implements BinaryTreeNode {
 	@Override
 	public BinaryTreeNode clone()
 	{
-		return null;
+		return new BinaryNodeExample(this.value);
 	}
 
 	
 	@Override
 	public boolean isEqual(BinaryTreeNode node) 
 	{
-		return false;
+		BinaryNodeExample temp = (BinaryNodeExample)node;
+		return this.value == temp.value ? true : false;
 	}
 
 	@Override
 	public boolean isLessThan(BinaryTreeNode node)
 	{
-		return false;
+		BinaryNodeExample temp = (BinaryNodeExample)node;
+		return this.value < temp.value ? true : false;
+	}
+	
+	@Override
+	public String toString()
+	{
+		return this.value + "";
 	}
 }

@@ -1,5 +1,7 @@
 package Trees;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 
 /*
 # Binary Tree Data Structure.
@@ -19,7 +21,7 @@ package Trees;
  */
 public class BinaryTree {
 	
-	BinaryTreeNode root = null; //
+	public BinaryTreeNode root = null; //
 	 
 	/**
 	 * 
@@ -43,15 +45,18 @@ public class BinaryTree {
 	 */
 	public void insert(BinaryTreeNode node)
 	{
+		// Sí no tienen raíz ese nodo va a ser la raíz
 		if(isEmpty())
 		{
 			root = node;
 		}
 		else
 		{
+			//
 			BinaryTreeNode temp = root;
 			BinaryTreeNode parent = root;
 			
+			// Buscar el hueco
 			while(temp != null)
 			{
 				parent = temp;
@@ -61,6 +66,7 @@ public class BinaryTree {
 					temp = temp.getRight();
 			}
 			
+			// Insertar en el huevo
 			if(node.isLessThan(parent))
 				parent.setLeft(node);
 			else
@@ -99,12 +105,76 @@ public class BinaryTree {
 	 */
 	public void delete(BinaryTreeNode nodeToDelete)
 	{
+		BinaryTreeNode temp = root;
+		BinaryTreeNode parent = root;
 		
+		while(temp != null)
+		{
+			if(temp.isEqual(nodeToDelete))
+				break;
+			else
+			{
+				parent = temp;
+				
+				if (nodeToDelete.isLessThan(temp)) 
+					temp = temp.getLeft();
+				else
+					temp = temp.getRight();
+			}
+		}
+		
+		if (temp != null) 
+		{
+			if (isLeaf(temp)) 
+			{
+				if (temp.isLessThan(parent))
+					parent.setLeft(null);
+				else
+					parent.setRight(null);
+			}
+			else
+			{
+				if (oneChild(temp))
+				{
+					if (temp.getLeft() != null)
+						if (temp.isLessThan(parent))
+							parent.setLeft(temp.getLeft());
+						else
+							parent.setRight(temp.getLeft());
+					else
+						if (temp.isLessThan(parent))
+							parent.setLeft(temp.getRight());
+						else
+							parent.setRight(temp.getRight());
+				}
+				else
+				{
+					BinaryTreeNode less = temp.getRight();
+					
+					while (less.getLeft() != null)
+						less = less.getLeft();
+					
+					delete(less);
+					
+					less.setLeft(temp.getLeft());
+					less.setRight(temp.getRight());
+					
+					if (temp.isLessThan(parent)) 
+						parent.setLeft(less);
+					else
+						parent.setRight(less);
+				}
+			}
+		}
+		else
+		{
+			
+		}
 	}
 	
 	
 	/**
-	 * 
+	 * Es para saber si es una hoja
 	 * @param node
 	 * @return
 	 */
@@ -168,6 +238,33 @@ public class BinaryTree {
 			System.out.print (node.toString() + " ");
 			inorder(node.getRight());
 		}
-			
 	}
+
+	/*public static void main(String[] args) 
+	{
+		BinaryTree bt = new BinaryTree();
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
+		try
+		{
+			String [] numbers = br.readLine().split(",");
+			
+			for (int i = 0; i < numbers.length; i++) 
+				bt.insert(new BinaryNodeExample(Integer.parseInt(numbers[i])));
+			
+			bt.preorder(bt.root);
+			bt.postorder(bt.root);
+			bt.delete(new BinaryNodeExample(14));
+			bt.delete(new BinaryNodeExample(88));
+			//bt.delete(new BinaryNodeExample(64));
+			System.out.println();
+			bt.preorder(bt.root);
+			bt.delete(new BinaryNodeExample(47));
+			System.out.println();
+			bt.preorder(bt.root);
+			bt.inorder(bt.root);
+		} 
+		catch (Exception ex) {}
+	}*/
 }

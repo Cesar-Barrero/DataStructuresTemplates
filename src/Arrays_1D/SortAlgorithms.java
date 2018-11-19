@@ -60,6 +60,22 @@ public class SortAlgorithms {
 	 */
 	public void bubbleSort(int[] unsortedArray)
 	{
+		boolean swap = false;
+		do
+		{
+			swap = false;
+			for (int i = 0; i < unsortedArray.length; i++) 
+			{
+				if (unsortedArray[i] > unsortedArray[i + 1]) 
+				{
+					int temp = unsortedArray[i];
+					unsortedArray[i] = unsortedArray[i + 1];
+					unsortedArray[i + 1] = temp;
+					swap = true;
+				}
+			}
+		}
+		while(swap);
 	}
 	
 	

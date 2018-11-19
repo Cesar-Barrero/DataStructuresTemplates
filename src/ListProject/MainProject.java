@@ -173,10 +173,10 @@ public class MainProject {
 				input = br_tourist.readLine();
 				
 				data = input.split("\t");
-				tourist.insertAtEnd(new Tourist(data[0].split(" ")[1], data[1].split(" ")[2],
-						data[2].split(" ")[3], data[3].split(" ")[4]));
+				tourist.insertAtEnd(new Tourist(data[0].split(" ")[1], data[1].split(" ")[1],
+						data[2].split(" ")[1], data[3].split(" ")[1]));
 				
-				//input = br_tourist.readLine();
+				input = br_tourist.readLine();
 			}
 			
 		}
@@ -198,7 +198,7 @@ public class MainProject {
    	 			
    	 			menu_option = Integer.parseInt(br.readLine());
    	 			
-   	 			while (menu_option > 4)
+   	 			while (menu_option > 5)
    	 			{
    	 				bw.write("Por favor, seleccione una opcion valida.\n");
    	 				bw.flush();
@@ -221,7 +221,7 @@ public class MainProject {
    	 				break;
    	 			}
    	 		}
-   	 		while(menu_option != 4);
+   	 		while(menu_option != 5);
    	 		
    	 		save_tourisList();
    	 	}
