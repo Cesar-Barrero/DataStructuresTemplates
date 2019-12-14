@@ -21,8 +21,8 @@ import LinearDataStructures.List;
  * This class represents the solution of Contest Problem: WhereIsTheMarble
  * @author MSc. Carlos Andres Sierra, PhD. student
  */
-public class WhereIsTheMarble {
-
+public class WhereIsTheMarble 
+{
 	public class ProblemNode implements Node
 	{
 		public int value;
@@ -48,7 +48,8 @@ public class WhereIsTheMarble {
 
 
 		@Override
-		public Node clone() {
+		public Node clone() 
+		{
 			ProblemNode temp = new ProblemNode(this.value);
 			return temp;
 		}

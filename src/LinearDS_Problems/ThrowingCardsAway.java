@@ -1,7 +1,6 @@
 package LinearDS_Problems;
 
 import java.io.*;
-
 import LinearDataStructures.Node;
 import LinearDataStructures.Queue;
 
@@ -22,8 +21,8 @@ import LinearDataStructures.Queue;
  * This class represents the solution of Contest Problem: ThrowingCardsAway
  * @author MSc. Carlos Andres Sierra, PhD. student
  */
-public class ThrowingCardsAway {
-
+public class ThrowingCardsAway 
+{
 	/**
 	 * 
 	 */
@@ -57,7 +56,8 @@ public class ThrowingCardsAway {
 
 
 		@Override
-		public Node clone() {
+		public Node clone() 
+		{
 			ProblemNode temp = new ProblemNode(this.value);
 			return temp;
 		}

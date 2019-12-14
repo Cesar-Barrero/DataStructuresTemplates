@@ -5,39 +5,39 @@ import LinearDataStructures.*;
 
 //https://www.hackerearth.com/practice/data-structures/stacks/basics-of-stacks/practice-problems/algorithm/monk-and-prisoner-of-azkaban/
 
-public class MonkAndPrisonerOfAzkaban {
-	
+public class MonkAndPrisonerOfAzkaban 
+{	
 	public class ProblemNode implements Node
 	{
 		public int parchment;
 
 		@Override
-		public void setNext(Node node) {
-			// TODO Auto-generated method stub
+		public void setNext(Node node) 
+		{
 			
 		}
 
 		@Override
-		public Node getNext() {
-			// TODO Auto-generated method stub
+		public Node getNext() 
+		{
 			return null;
 		}
 
 		@Override
-		public Node clone() {
-			// TODO Auto-generated method stub
+		public Node clone() 
+		{
 			return null;
 		}
 
 		@Override
-		public boolean isEqual(Node node) {
-			// TODO Auto-generated method stub
+		public boolean isEqual(Node node) 
+		{
 			return false;
 		}
 
 		@Override
-		public boolean isLessThan(Node node) {
-			// TODO Auto-generated method stub
+		public boolean isLessThan(Node node) 
+		{
 			return false;
 		}
 		
@@ -51,8 +51,7 @@ public class MonkAndPrisonerOfAzkaban {
 	
 	public String solution(String input)
 	{
-		return input;
-		
+		return input;		
 	}
 	
 	public static void main(String[] args) 

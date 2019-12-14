@@ -5,8 +5,8 @@ import LinearDataStructures.*;
 
 //https://www.urionlinejudge.com.br/judge/en/problems/view/1281
 
-public class GoingToTheMarket {
-	
+public class GoingToTheMarket 
+{	
 	public class nodeProblem implements Node
 	{
 		String product;
@@ -46,8 +46,8 @@ public class GoingToTheMarket {
 		}
 
 		@Override
-		public boolean isLessThan(Node node) {
-			// TODO Auto-generated method stub
+		public boolean isLessThan(Node node) 
+		{
 			return false;
 		}
 		

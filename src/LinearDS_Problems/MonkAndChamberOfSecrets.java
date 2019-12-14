@@ -1,10 +1,8 @@
 package LinearDS_Problems;
 
 import java.io.*;
-
 import LinearDataStructures.Queue;
 import LinearDataStructures.Node;
-
 
 /*
 # Contest Problem: Monk And Chamber Of Secrets
@@ -23,7 +21,8 @@ import LinearDataStructures.Node;
  * This class represents the solution of Contest Problem: Monk And Chamber Of Secrets
  * @author MSc. Carlos Andres Sierra, PhD. student
  */
-public class MonkAndChamberOfSecrets {
+public class MonkAndChamberOfSecrets 
+{
 	/**
 	 * 
 	 *
@@ -59,7 +58,8 @@ public class MonkAndChamberOfSecrets {
 
 
 		@Override
-		public Node clone() {
+		public Node clone() 
+		{
 			ProblemNode temp = new ProblemNode(this.value, this.index);
 			return temp;
 		}

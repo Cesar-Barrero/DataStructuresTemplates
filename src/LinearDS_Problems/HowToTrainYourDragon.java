@@ -5,8 +5,8 @@ import LinearDataStructures.*;
 
 //https://www.urionlinejudge.com.br/judge/en/problems/view/1851
 
-public class HowToTrainYourDragon {
-	
+public class HowToTrainYourDragon 
+{	
 	public class ProblemNode implements Node
 	{
 		
@@ -41,14 +41,14 @@ public class HowToTrainYourDragon {
 		}
 
 		@Override
-		public boolean isEqual(Node node) {
-			// TODO Auto-generated method stub
+		public boolean isEqual(Node node) 
+		{
 			return false;
 		}
 
 		@Override
-		public boolean isLessThan(Node node) {
-			// TODO Auto-generated method stub
+		public boolean isLessThan(Node node) 
+		{
 			return false;
 		}
 		

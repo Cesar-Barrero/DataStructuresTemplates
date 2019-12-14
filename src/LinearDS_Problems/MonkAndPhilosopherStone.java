@@ -1,7 +1,6 @@
 package LinearDS_Problems;
 
 import java.io.*;
-
 import LinearDataStructures.Queue;
 import LinearDataStructures.Stack;
 import LinearDataStructures.Node;
@@ -23,8 +22,8 @@ import LinearDataStructures.Node;
  * This class represents the solution of Contest Problem: Monk And Philosopher Stone
  * @author MSc. Carlos Andres Sierra, PhD. student
  */
-public class MonkAndPhilosopherStone {
-	
+public class MonkAndPhilosopherStone 
+{	
 	/**
 	 * 
 	 *
@@ -58,7 +57,8 @@ public class MonkAndPhilosopherStone {
 
 
 		@Override
-		public Node clone() {
+		public Node clone() 
+		{
 			ProblemNode temp = new ProblemNode(this.value);
 			return temp;
 		}
@@ -111,7 +111,7 @@ public class MonkAndPhilosopherStone {
 			Queue harryBag = new Queue();
 			Stack monkBag = new Stack();
 			
-			coinsHarryBag = Integer.parseInt( br. readLine() );
+			coinsHarryBag = Integer.parseInt( br.readLine() );
 			input = br.readLine().split(" ");
 			
 			for(int i = 0; i < coinsHarryBag; i++)
