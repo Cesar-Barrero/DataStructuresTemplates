@@ -1,9 +1,10 @@
 package TreesProject;
+
 import Trees.*;
 import java.io.*;
 
-public class AndyFirstDictionary {
-	
+public class AndyFirstDictionary 
+{	
 	public class nodeProblem implements BinaryTreeNode
 	{
 		public String text;
@@ -15,36 +16,42 @@ public class AndyFirstDictionary {
 			this.text = text;
 		}
 		
+		
 		@Override
 		public void setLeft(BinaryTreeNode node) 
 		{
 			left = (nodeProblem)node;
 		}
 
+		
 		@Override
 		public BinaryTreeNode getLeft()
 		{
 			return left;
 		}
 
+		
 		@Override
 		public void setRight(BinaryTreeNode node)
 		{
 			right = (nodeProblem)node;
 		}
 
+		
 		@Override
 		public BinaryTreeNode getRight() 
 		{
 			return right;
 		}
 
+		
 		@Override
 		public BinaryTreeNode clone() 
 		{
 			return new nodeProblem(this.text);
 		}
 
+		
 		@Override
 		public boolean isEqual(BinaryTreeNode node) 
 		{
@@ -52,13 +59,15 @@ public class AndyFirstDictionary {
 			return this.text == temp.text ? true : false;
 		}
 
+		
 		@Override
 		public boolean isLessThan(BinaryTreeNode node) 
 		{
 			nodeProblem temp = (nodeProblem)node;
 			return temp.text < text ? false : true;
 		}
-			
+		
+		
 		@Override
 		public String toString()
 		{
@@ -66,13 +75,16 @@ public class AndyFirstDictionary {
 		}
 	}
 		
+	
 	public AndyFirstDictionary() {}
-		
+	
+	
 	public String solution(String text)
 	{
 		
 		return "";
 	}
+	
 	
 	public static void main(String [] args) 
 	{

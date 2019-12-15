@@ -17,9 +17,8 @@ package Trees;
  * This class represents the behavior of Recovery Trees based on Tree Traversals
  * @author MSc. Carlos Andres Sierra, PhD. student
  */
-public class RecoveryTrees {
-
-	
+public class RecoveryTrees 
+{	
 	/**
 	 * Zero - parameters constructor
 	 */
@@ -140,5 +139,4 @@ public class RecoveryTrees {
 		RecoveryTrees com = new RecoveryTrees();
 		com.in_post2pre("ACBFGED", "ABCDEFG");
 	}
-
 }
