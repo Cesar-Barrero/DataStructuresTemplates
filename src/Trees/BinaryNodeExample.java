@@ -16,11 +16,12 @@ package Trees;
  * This class represents the behavior of Binary Tree Node
  * @author MSc. Carlos Andres Sierra, PhD. student
  */
-public class BinaryNodeExample implements BinaryTreeNode {
-
+public class BinaryNodeExample implements BinaryTreeNode 
+{
 	public int value;
 	public BinaryNodeExample left;
 	public BinaryNodeExample right;
+
 	
 	public  BinaryNodeExample(int value)
 	{
@@ -70,12 +71,14 @@ public class BinaryNodeExample implements BinaryTreeNode {
 		return this.value == temp.value ? true : false;
 	}
 
+	
 	@Override
 	public boolean isLessThan(BinaryTreeNode node)
 	{
 		BinaryNodeExample temp = (BinaryNodeExample)node;
 		return this.value < temp.value ? true : false;
 	}
+	
 	
 	@Override
 	public String toString()

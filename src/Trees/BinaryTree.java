@@ -19,10 +19,11 @@ import java.io.InputStreamReader;
  * This class represents the behavior of Binary Trees
  * @author MSc. Carlos Andres Sierra, PhD. student
  */
-public class BinaryTree {
-	
+public class BinaryTree 
+{	
 	public BinaryTreeNode root = null; //
-	 
+	
+	
 	/**
 	 * 
 	 */
@@ -66,7 +67,7 @@ public class BinaryTree {
 					temp = temp.getRight();
 			}
 			
-			// Insertar en el huevo
+			// Insertar en el nuevo
 			if(node.isLessThan(parent))
 				parent.setLeft(node);
 			else
@@ -240,6 +241,7 @@ public class BinaryTree {
 		}
 	}
 
+	
 	/*public static void main(String[] args) 
 	{
 		BinaryTree bt = new BinaryTree();

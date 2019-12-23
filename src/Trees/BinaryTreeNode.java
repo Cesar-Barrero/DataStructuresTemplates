@@ -1,6 +1,5 @@
 package Trees;
 
-
 /*
 # Abstraction of a Tree Node.
 #
@@ -17,9 +16,8 @@ package Trees;
  * This class represents the behavior of a Tree Node Abstraction
  * @author MSc. Carlos Andres Sierra, PhD. student
  */
-public interface BinaryTreeNode {
-
-		
+public interface BinaryTreeNode 
+{		
 	/**
 	 * 
 	 * @param node

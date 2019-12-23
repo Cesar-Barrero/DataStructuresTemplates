@@ -1,6 +1,5 @@
 package Trees;
 
-
 /*
 # Recovery Node to rebuild a tree based on tree traversals.
 #
@@ -17,8 +16,8 @@ package Trees;
  * This class represents the behavior of a Recovery Node to rebuild a tree based on tree traversals
  * @author MSc. Carlos Andres Sierra, PhD. student
  */
-public class RecoveryNode implements BinaryTreeNode {
-
+public class RecoveryNode implements BinaryTreeNode 
+{
 	/*
 	 * 
 	 */
@@ -79,9 +78,9 @@ public class RecoveryNode implements BinaryTreeNode {
 	@Override
 	public boolean isLessThan(BinaryTreeNode node) 
 	{
-		// TODO Auto-generated method stub
 		return false;
 	}
+	
 	
 	/**
 	 * 
