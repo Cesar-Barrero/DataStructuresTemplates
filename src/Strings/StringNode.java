@@ -18,8 +18,8 @@ import LinearDataStructures.Node;
  * This class represents the behavior of a String Node for Strings based on Lists
  * @author MSc. Carlos Andres Sierra, PhD. student
  */
-public class StringNode implements Node {
-
+public class StringNode implements Node 
+{
 	/*
 	 * 
 	 */

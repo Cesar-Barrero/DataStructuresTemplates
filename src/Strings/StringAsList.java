@@ -19,8 +19,8 @@ import java.io.*;
  * This class represents the behavior of Strings based on Character Lists
  * @author MSc. Carlos Andres Sierra, PhD. student
  */
-public class StringAsList {
-
+public class StringAsList 
+{
 	private List string = new List();
 	
 	/**
@@ -30,6 +30,7 @@ public class StringAsList {
 	{
 		string = new List();
 	}
+
 	
 	/**
 	 * 

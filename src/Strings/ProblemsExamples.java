@@ -2,7 +2,6 @@ package Strings;
 
 import java.io.*;
 
-
 /*
 # Examples of Problems Solutions based on Strings.
 #
@@ -19,9 +18,8 @@ import java.io.*;
  * This class represents the behavior of several Problems Solutions based on Strings
  * @author MSc. Carlos Andres Sierra, PhD. student
  */
-public class ProblemsExamples {
-
-	
+public class ProblemsExamples 
+{	
 	/**
 	 * https://www.hackerearth.com/practice/basic-programming/recursion/recursion-and-backtracking/practice-problems/algorithm/its-confidential-f006e2c4/
 	 * @param input
@@ -75,6 +73,7 @@ public class ProblemsExamples {
 	{
 		int number = 0;
 		int length = input.length();
+		
 		for(int i = 0; i  < input.length(); i++)
 		{
 			
